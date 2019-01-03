@@ -1,5 +1,7 @@
 package parentTest;
 
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
@@ -18,9 +20,10 @@ public class ParentTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     protected LoginPage loginPage;
-    protected HomaPage homaPage;
+    protected HomaPage homePage;
     protected SparesPage sparesPage;
     protected EditSparePage editSparePage;
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
     @Before
     public void setUp() {
@@ -30,7 +33,7 @@ public class ParentTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
-        homaPage = new HomaPage(webDriver);
+        homePage = new HomaPage(webDriver);
         sparesPage= new SparesPage(webDriver);
         editSparePage = new EditSparePage(webDriver);
 

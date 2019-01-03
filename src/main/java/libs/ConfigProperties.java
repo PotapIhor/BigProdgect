@@ -2,6 +2,7 @@ package libs;
 
 import org.aeonbits.owner.Config;
 
+
 public interface ConfigProperties extends Config {
 	long TIME_FOR_DFFAULT_WAIT();
 	long TIME_FOR_EXPLICIT_WAIT_LOW();
@@ -18,3 +19,5 @@ public interface ConfigProperties extends Config {
 	String MySQL_DB_USER();
 	String MySQL_DB_PASSWORD();
 }
+
+

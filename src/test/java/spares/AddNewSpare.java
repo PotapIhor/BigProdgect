@@ -12,13 +12,13 @@ public class AddNewSpare extends ParentTest {
     @Test
     public void addSpareTest() {
         loginPage.userValidLogin("Student", "909090");
-        homaPage.clickOnMenuDictionary();
+        homePage.clickOnMenuDictionary();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        homaPage.clickOnSubMenuSpares();
+        homePage.clickOnSubMenuSpares();
         sparesPage.checkCurrentUrl();
         sparesPage.deletingAllSparesWithName(nameOfSpare);
         sparesPage.ckickOnButtonPlus();

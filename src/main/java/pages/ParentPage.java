@@ -1,6 +1,7 @@
 package pages;
 
 import libs.ActionsWithOurElements;
+import libs.ConfigProperties;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
