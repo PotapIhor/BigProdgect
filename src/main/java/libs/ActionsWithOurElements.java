@@ -55,6 +55,20 @@ webDriverWait20.until(ExpectedConditions.elementToBeClickable(webElement));
         }
     }
 
+    public void setNeededStateToCheckBox (WebElement webElement, String neededState){
+        if ("check".equals(neededState) || "uncheck".equals(neededState)){
+if (webElement.isSelected() && "check".equals(neededState)){
+    logger.info("check box is already checed");
+}else if (webElement.isSelected() && "uncheck".equals(neededState)){
+    clckOnElement(webElement);
+    logger.info("check box unchecked");
+}
+        }else {
+            logger.error(String.format("%s - is not expected state", neededState));
+            Assert.fail(String.format("%s - is not expected state", neededState));
+        }
+    }
+
     private void printErrorAndStopTest(Exception e) {
         logger.error("Can't work with element" + e);
         Assert.fail("Can't work with element" + e);
